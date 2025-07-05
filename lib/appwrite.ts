@@ -1,12 +1,17 @@
 import { CreateUserParams, SignInParams } from "@/type";
-import { Account, Avatars, Client, Databases, ID, Query } from "react-native-appwrite";
+import { Account, Avatars, Client, Databases, ID, Query, Storage } from "react-native-appwrite";
 
 export const appwriteConfig = {
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!,
     platform: "com.jsm.foodordering",
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     databaseId: "6868b46d002604c0b6aa",
-    userCollectionId: "6868b4940038085a1a50"
+    bucketId : "6869069b003a03e371e0",
+    userCollectionId: "6868b4940038085a1a50",
+    categoriesCollectionId : "686902a5001c04a18b52",
+    menuCollectionId : "686903180022861ee867",
+    customizationsCollectionId : "68690490000b88ef811f",
+    menuCustomizationCollectionId : "6869056b000bf48dccb2"
 }
 
 export const client = new Client();
@@ -18,6 +23,7 @@ client
 
 export const account = new Account(client)
 export const databases = new Databases(client)
+export const storage = new Storage(client)
 const avatars = new Avatars(client)
 
 
