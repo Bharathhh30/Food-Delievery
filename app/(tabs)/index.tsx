@@ -17,7 +17,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   const {user} = useAuthStore()
-  // console.log("userAuthStore",user?.email)
+  // console.log("userAuthStore",user?.email)           
   return (
     <SafeAreaView className="flex-1 bg-white">
       <FlatList
